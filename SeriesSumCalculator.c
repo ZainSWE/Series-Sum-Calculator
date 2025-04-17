@@ -2,14 +2,17 @@
 #include <stdlib.h>
 #include <string.h>
 
+//prototypes
 void title();
 int arithmeticSeries(int n, int i, int d);
 int geometricSeries(int n, int i, int r);
 
+//main
 int main() {
 
     int n, i, d, r, sum, choice;
 
+    //menu selection
     printf("Select Calculation\n");
     printf("1. Arithmetic Series\n");
     printf("2. Geometric Series\n");
@@ -20,10 +23,13 @@ int main() {
     printf("Enter choice: ");
     scanf("%d", &choice);
 
+    //menu selection case handling
     switch(choice) {
+
+	//option 1:
 	case 1:
  	    title("Arithmetic Series");
-
+	    //user-input
 	    printf("enter 'n': ");
 	    scanf("%d", &n);
 	    printf("enter 'i': ");
@@ -36,9 +42,10 @@ int main() {
 	    printf("sum is: %d\n", sum);
 	    break;
 
+	//option 2:
 	case 2:
 	    title("Geometric Series");
-
+	    //user-input
 	    printf("enter 'n': ");
 	    scanf("%d", &n);
 	    printf("enter 'i': ");
@@ -51,14 +58,17 @@ int main() {
 	    printf("sum is: %d\n", sum);
 	    break;
 
+	//option 3:
 	case 3:
 	    title("Factorial");
 	    break;
 
+	//option 4:
 	case 4:
 	    title("Fibonacci");
 	    break;
 
+	//option 5:
 	case 5:
 	    title("Exited Program");
 	    break;
@@ -67,10 +77,12 @@ int main() {
     return 0;
 }
 
+//arithmetic series calculator
 int arithmeticSeries(int n, int i, int d) {
 
     int sum = 0;
 
+    //formula:
     for (int j = 0; j < i; j++) {
 	sum = sum + n;
 	n = n + d;
@@ -79,10 +91,12 @@ int arithmeticSeries(int n, int i, int d) {
     return sum;
 }
 
+//geometric series calculator
 int geometricSeries(int n, int i, int r) {
 
     int sum = 0;
 
+    //formula:
     for (int j = 0; j < i; j++) {
 	sum = sum + n;
 	n = n * r;
@@ -91,6 +105,7 @@ int geometricSeries(int n, int i, int r) {
     return sum;
 }
 
+//custom-title box
 void title(char *text) {
 
     int length = strlen(text);
