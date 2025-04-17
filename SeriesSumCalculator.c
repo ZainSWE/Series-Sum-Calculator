@@ -6,6 +6,7 @@
 void title();
 int arithmeticSeries(int n, int i, int d);
 int geometricSeries(int n, int i, int r);
+int factorial(int n);
 
 //main
 int main() {
@@ -61,6 +62,13 @@ int main() {
 	//option 3:
 	case 3:
 	    title("Factorial");
+	    //user-input
+	    printf("enter 'n': ");
+	    scanf("%d", &n);
+
+	    sum = factorial(n);
+
+	    printf("sum is: %d\n", sum);
 	    break;
 
 	//option 4:
@@ -100,6 +108,17 @@ int geometricSeries(int n, int i, int r) {
     for (int j = 0; j < i; j++) {
 	sum = sum + n;
 	n = n * r;
+    }
+
+    return sum;
+}
+
+int factorial(int n) {
+
+    int sum = 1;
+
+    for (int j = 1; j <= n; j++) {
+	sum = sum * j;
     }
 
     return sum;
