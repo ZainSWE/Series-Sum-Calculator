@@ -113,10 +113,12 @@ int geometricSeries(int n, int i, int r) {
     return sum;
 }
 
+//factorial calculator
 int factorial(int n) {
 
     int sum = 1;
 
+    //formula:
     for (int j = 1; j <= n; j++) {
 	sum = sum * j;
     }
