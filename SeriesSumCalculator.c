@@ -3,11 +3,12 @@
 #include <string.h>
 
 void title();
-int sequence(int n, int i);
+int arithmeticSeries(int n, int i, int d);
+int geometricSeries(int n, int i, int r);
 
 int main() {
 
-    int n, i, choice;
+    int n, i, d, r, sum, choice;
 
     printf("Select Calculation\n");
     printf("1. Arithmetic Series\n");
@@ -27,14 +28,27 @@ int main() {
 	    scanf("%d", &n);
 	    printf("enter 'i': ");
 	    scanf("%d", &i);
+	    printf("enter 'd': ");
+	    scanf("%d", &d);
 
-	    int sum = sequence(n, i);
+	    sum = arithmeticSeries(n, i, d);
 
 	    printf("sum is: %d\n", sum);
 	    break;
 
 	case 2:
 	    title("Geometric Series");
+
+	    printf("enter 'n': ");
+	    scanf("%d", &n);
+	    printf("enter 'i': ");
+	    scanf("%d", &i);
+	    printf("enter 'r': ");
+	    scanf("%d,", &r);
+
+	    sum = geometricSeries(n, i, r);
+
+	    printf("sum is: %d\n", sum);
 	    break;
 
 	case 3:
@@ -53,12 +67,25 @@ int main() {
     return 0;
 }
 
-int sequence(int n, int i) {
+int arithmeticSeries(int n, int i, int d) {
 
     int sum = 0;
 
     for (int j = 0; j < i; j++) {
-	sum = ((n - i + 1) / 2) * ((i + n));
+	sum = sum + n;
+	n = n + d;
+    }
+
+    return sum;
+}
+
+int geometricSeries(int n, int i, int r) {
+
+    int sum = 0;
+
+    for (int j = 0; j < i; j++) {
+	sum = sum + n;
+	n = n * r;
     }
 
     return sum;
